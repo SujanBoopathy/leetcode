@@ -8,9 +8,21 @@ class Solution {
                 int temp=nums[a]+nums[b]+nums[c];
                 if(temp==0){
                     List<Integer> lst=new ArrayList<>();
-                    lst.add(nums[a]);
-                    lst.add(nums[b]);
-                    lst.add(nums[c]);
+                    if(nums[a]!=0)
+                        lst.add(nums[a]);
+                    
+                    if(nums[b]!=0) 
+                        lst.add(nums[b]);
+                    
+                    if(nums[c]!=0)
+                        lst.add(nums[c]);
+                    if(nums[a]==0)
+                        lst.add(nums[a]);
+                    if(nums[b]==0)
+                        lst.add(nums[b]);
+                    if(nums[c]==0)
+                        lst.add(nums[c]);
+                    
                     if(!res.contains(lst)){
                         res.add(lst);
                     }
