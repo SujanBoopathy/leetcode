@@ -11,7 +11,9 @@ class Solution {
                     lst.add(nums[a]);
                     lst.add(nums[b]);
                     lst.add(nums[c]);
-                    res.add(lst);
+                    if(!res.contains(lst)){
+                        res.add(lst);
+                    }
                 }
                 b++;
                 c++;
