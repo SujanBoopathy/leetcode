@@ -9,14 +9,12 @@ class Solution {
                 if(sum<0) 
                 {
                     left++;
-                    while( left<nums.length-1 && nums[left]==nums[left+1] )
-                        left++;
+                    
                 }
                 else if(sum>0)
                 {
                     right--;
-                    while( right>0 && nums[right]==nums[right-1])
-                        right--;
+                    
                 }
                 else{
                     List<Integer> temp=new ArrayList<>();
@@ -24,6 +22,10 @@ class Solution {
                     temp.add(nums[left]);
                     temp.add(nums[right]);
                     res.add(temp);
+                    while( left<nums.length-1 && nums[left]==nums[left+1] )
+                        left++;
+                    while( right>0 && nums[right]==nums[right-1])
+                        right--;
                     left++;
                     right--;
                 }
