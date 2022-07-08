@@ -12,9 +12,15 @@ class Solution {
             }
         }
         lst.add(res);
+        if(lst.size()!=pattern.length()){
+            return false;
+        }
         Map<Character,String> mp=new HashMap<>();
-        for(int i=0;i<pattern.length();i++){
-            if(mp.containsKey(pattern.charAt(i))){
+        for(int i=0;i<pattern.length();i++){            
+            if(mp.containsValue(lst.get(i)) && !mp.containsKey(pattern.charAt(i))){
+                return false;
+            }
+            else if(mp.containsKey(pattern.charAt(i))){
                 continue;
             }
             else{
