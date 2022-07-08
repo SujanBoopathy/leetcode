@@ -15,15 +15,18 @@ class Solution {
         Map<Character,String> mp=new HashMap<>();
         for(int i=0;i<pattern.length();i++){
             if(mp.containsKey(pattern.charAt(i))){
-                if(mp.get(pattern.charAt(i))==lst.get(i)){
-                    continue;
-                }
-                else{
-                    return false;
-                }
+                continue;
             }
             else{
                 mp.put(pattern.charAt(i),lst.get(i));
+            }
+        }
+        for(int i=0;i<pattern.length();i++){
+            if(mp.containsKey(pattern.charAt(i)) && mp.get(pattern.charAt(i)).equals(lst.get(i))){
+                continue;
+            }
+            else{
+                return false;
             }
         }
         return true;
