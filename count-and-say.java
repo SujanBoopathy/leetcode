@@ -1,19 +1,14 @@
 class Solution {
     public String updateString(String s){
-        Map<Character,Integer> mp=new HashMap<>();
-        List<Character> lst=new ArrayList<>();
-        for(int i=0;i<s.length();i++){
-            if(mp.containsKey(s.charAt(i))){
-                mp.put(s.charAt(i),mp.get(s.charAt(i))+1);
-            }
-            else{
-                mp.put(s.charAt(i),1);
-                lst.add(s.charAt(i));
-            }
-        }
         String res="";
-        for(int i=0;i<lst.size();i++){
-            res+=Integer.toString(mp.get(lst.get(i)))+lst.get(i);
+        for(int i=0;i<s.length();i++){
+            int j=i,count=1;
+            while(j<s.length()-1 && s.charAt(j)==s.charAt(j+1)){
+                j++;
+                count++;
+            }
+            res+=Integer.toString(count)+s.charAt(i);
+            i=j;
         }
         return res;
     }
