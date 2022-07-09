@@ -1,6 +1,6 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-        int start=-1,end=-1,loc=0;
+        int start=-1,end=-1,loc=-1;
         int left=0,right=nums.length-1;
         while(left<right){
             int mid=(left+right)/2;
@@ -13,20 +13,26 @@ class Solution {
             }
             else{
                 left=mid+1;
+         
             }
         }
         int a[]=new int[2];
-        int temp=loc;
-        while(nums[loc]!=nums[temp]){
+        if(loc==-1){
+            a[0]=-1;
+            a[1]=-1;
+            return a;
+        }
+       
+        int temp=loc-1;
+        while(temp>=0 && nums[loc]==nums[temp]){
             temp--;
         }
-        if(temp!=loc)
-           start=temp++;
-        temp=loc;
-        while(nums[loc]!=nums[temp]){
+        start=temp+1;
+        temp=loc+1;
+        while(temp<nums.length && nums[loc]==nums[temp]){
             temp++;
         }
-        end=temp--;
+        end=temp-1;
         a[0]=start;
         a[1]=end;
         return a;
