@@ -16,8 +16,19 @@ class Solution {
             }
         }
         int a[]=new int[2];
-        a[0]=loc;
-        a[1]=loc;
+        int temp=loc;
+        while(nums[loc]!=nums[temp]){
+            temp--;
+        }
+        if(temp!=loc)
+           start=temp++;
+        temp=loc;
+        while(nums[loc]!=nums[temp]){
+            temp++;
+        }
+        end=temp--;
+        a[0]=start;
+        a[1]=end;
         return a;
     }
 }
