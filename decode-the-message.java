@@ -11,7 +11,16 @@ class Solution {
                 }
             }
         }
-        
+        String res="";
+        for(int i=0;i<message.length();i++){
+            if(message.charAt(i)!=' '){
+                res+=a[mp.get(message.charAt(i))];
+            }
+            else{
+                res+=" ";
+            }
+        }
+        return res;
         
     }
 }
