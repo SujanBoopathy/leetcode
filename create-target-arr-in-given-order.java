@@ -1,9 +1,12 @@
 class Solution {
     public int[] createTargetArray(int[] nums, int[] index) {
-        int target[]=new int[nums.length];
-        int visit[]=new int[nums.length];
+        List<Integer> lst=new ArrayList<>();
         for(int i=0;i<nums.length;i++){
-            target[index[i]]=nums[i];
+            lst.add(index[i],nums[i]);
+        }
+        int target[]=new int[lst.size()];
+        for(int i=0;i<lst.size();i++){
+            target[i]=lst.get(i);
         }
         return target;
     }
