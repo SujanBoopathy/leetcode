@@ -8,7 +8,9 @@ class Solution {
                 else
                     flag=1;
             }
-            
+            if(s.charAt(i)=='*' && flag==0){
+                count++;
+            }
         }
         return count;
     }
