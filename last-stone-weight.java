@@ -21,7 +21,11 @@ class Solution {
                 stones[mj]=0;
             }
             int flag=0;
-            
+            for(int i=0;i<stones.length;i++){
+                if(stones[i]!=0){
+                    flag++;
+                }
+            }
             if(flag<=1)
                 break;
         }
