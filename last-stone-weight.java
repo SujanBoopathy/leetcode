@@ -12,7 +12,18 @@ class Solution {
                     mi=i;
                 }
             }
+            if(smax==max){
+                stones[mi]=0;
+                stones[mj]=0;
+            }
+            else{
+                stones[mi]=stones[mi]-stones[mj];
+                stones[mj]=0;
+            }
+            int flag=0;
             
+            if(flag<=1)
+                break;
         }
         for(int i=0;i<stones.length;i++){
             if(stones[i]!=0)
