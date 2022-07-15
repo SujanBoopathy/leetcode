@@ -2,9 +2,17 @@ class Solution {
     public int lastStoneWeight(int[] stones) {
         if(stones.length==1)
             return stones[0];
+        if(stones.length==2){
+            if(stones[0]==stones[1])
+                return 0;
+            else if(stones[0]>stones[1])
+                return stones[0]-stones[1];
+            else
+                return stones[1]-stones[0];
+        }
         while(true){
-            int max=0,smax=0,maxi=stones[0];
-            for(int i=1;i<stones.length;i++){
+            int max=0,smax=0,maxi=-1;
+            for(int i=0;i<stones.length;i++){
                 if(max<stones[i]){
                     smax=max;
                     max=i;
