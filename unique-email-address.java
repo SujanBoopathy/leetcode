@@ -3,19 +3,19 @@ class Solution {
         Set<String> st=new HashSet<>();
         for(String s:emails){
             String temp="";
-            int flag=0,flag1=1;
+            int host=0,local=0;
             for(int i=0;i<s.length();i++){
-                if(flag==0 && (s.charAt(i)=='+' || s.charAt(i)=='.')){
+                if(local==0 && s.charAt(i)!='.' && s.charAt(i)!='+'){
                     temp+=s.charAt(i);
                 }
-                else if(flag==0 && s.charAt(i)=='+'){
-                    flag=1;
-                }                
-                else if(flag==1 && s.charAt(i)=='@'){
-                    flag1=1;
-                    temp+=s.charAt(i);
+                if(s.charAt(i)=='+' && local==0){
+                    local=1;
                 }
-                else if(flag1==1){
+                if(local==1 && s.charAt(i)=='@'){
+                    temp+=s.charAt(i);
+                    host=1;
+                }
+                if(host==1){
                     temp+=s.charAt(i);
                 }
             }
