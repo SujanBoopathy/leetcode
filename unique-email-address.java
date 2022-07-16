@@ -10,7 +10,14 @@ class Solution {
                 }
                 else if(flag==0 && s.charAt(i)=='+'){
                     flag=1;
-                } 
+                }                
+                else if(flag==1 && s.charAt(i)=='@'){
+                    flag1=1;
+                    temp+=s.charAt(i);
+                }
+                else if(flag1==1){
+                    temp+=s.charAt(i);
+                }
             }
             st.add(temp);
         }
