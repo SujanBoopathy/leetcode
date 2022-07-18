@@ -1,6 +1,8 @@
 class Solution {
     public String convert(String s, int numRows) {
-       
+        if(s.isEmpty() || numRows<=0 || s==null)
+            return "";
+        
         String res="";
         int step=2*numRows-2;
         for(int i=0;i<numRows;i++){
