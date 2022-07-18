@@ -1,11 +1,14 @@
 class Solution {
     public String convert(String s, int numRows) {
-        char ch[][]=new char[numRows][numRows];
+       
         String res="";
+        int step=2*numRows-2;
         for(int i=0;i<numRows;i++){
-            for(int j=0;j<s.length();j++){
+            for(int j=i;j<s.length();j+=step){
+                res+=s.charAt(j);
                 
             }
         }
+        return res;
     }
 }
