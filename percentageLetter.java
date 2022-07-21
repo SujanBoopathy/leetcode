@@ -6,5 +6,7 @@ class Solution {
                 count++;
             }
         }
+        int res=Math.floor(Integer.parseInt((count/s.length()))*100);
+        return res;
     }
 }
