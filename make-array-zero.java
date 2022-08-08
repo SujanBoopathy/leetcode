@@ -10,19 +10,19 @@ class Solution {
     public int minimumOperations(int[] nums) {
         int count=0;
         while(check(nums)){
-            int min=0,smin=0;
+            int min=100;
             for(int i=0;i<nums.length;i++){
-                if(nums[min]>nums[i]){
-                    smin=min;
-                    min=i;
+                if(nums[i]<min && nums[i]>0){
+                    min=nums[i];
                 }
             }
             for(int i=0;i<nums.length;i++){
-                nums[i]-=nums[smin];
+                if(nums[i]>0){
+                    nums[i]-=min;
+                }
             }
             count++;
         }
         return count;
     }
-    
 }
