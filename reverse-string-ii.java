@@ -1,10 +1,10 @@
 class Solution {
     public String reverseString(String s){
-        String  temp="";
+        String  tempString="";
         for(int i=s.length()-1;i>=0;i--){
-            temp+=s.charAt(i);
+            tempString+=s.charAt(i);
         }
-        return temp;
+        return tempString;
     }
     public String reverseStr(String s, int k) {
         String res="";
